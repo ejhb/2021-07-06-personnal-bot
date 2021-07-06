@@ -1,7 +1,9 @@
 .ipynb_checkpoints
 __pycache__
-**/.env
-**/.env_debug
+.env
+.env_debug
 .vscode/*
 .vscode
 node_modules/*
+app/.env
+app/.env_debug
