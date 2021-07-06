@@ -1,0 +1,172 @@
+après anne laure
+while message.author == self.new_user:
+                if len(self.list_answers) == 0:
+                    await self.temp_chan.send(self.question[0])
+                    answer1 = message.content
+                    print("je suis passé dans le while 1","answer1: ",answer1,"/")
+                    if answer1 != ' ':
+                        self.list_answers.append(answer1)
+                        print("----------- len list qone:",len(self.list_answers))
+                elif len(self.list_answers) == 1:
+                    await self.temp_chan.send(self.question[1])
+                    answer2 = message.content
+                    print("je suis passé dans le while2","answer2: ",answer2,"/")
+                    if answer2 != ' ':
+                        self.list_answers.append(answer2)
+                        print("----------- len list qtwo:",len(self.list_answers))
+                elif len(self.list_answers) == 2:
+                    print("je suis passé dans le while3")
+                    await self.temp_chan.send(self.question[2])
+                    answer3 = message.content
+                    print("answer3: ",answer3,"/")
+                    if answer3 != ' ':
+                        self.list_answers.append(answer3)
+                        print("----------- len list qtree:",len(self.list_answers))
+                else:
+                    print("finish")
+                    break          
+
+avant anne-laure
+
+@commands.Cog.listener("on_message")
+    async def feedbacker(self, message):
+        #identifying channel 
+        guild = message.guild
+        question = ["question_a","question_b","question_c","question_d"]
+        list_answers = ["","","","","","","",""]
+        if message.author != self.new_user:
+            pass  
+        elif message.content == "yes" or "y":
+            
+            while message.author == self.new_user:
+                if len(list_answers[0]) == 0:
+                    while len(list_answers[0]) == 0:
+                        await self.temp_chan.send(question[0])
+                        answer0 = message.content
+                        list_answers.insert(0,answer0)
+                        print("Question one",list_answers)
+                        time.sleep(2)
+                elif len(list_answers[0]) >= 2:
+                    while len(list_answers[0]) >= 2:
+                        await self.temp_chan.send(question[1])
+                        answer1 = message.content
+                        list_answers.insert(1,answer1)
+                        print("Question two",list_answers)
+                        time.sleep(2)
+                elif len(list_answers[1]) >= 2:
+                    while len(list_answers[1]) >= 2:
+                        await self.temp_chan.send(question[2])
+                        answer2 = message.content
+                        list_answers.insert(2,answer2)
+                        print("Question tre",list_answers)
+                        time.sleep(2)
+                elif len(list_answers[3]) >= 2:
+                    while len(list_answers[3]) >= 2:
+                        await self.temp_chan.send(question[3])
+                        answer3 = message.content
+                        list_answers.insert(3,answer3)
+                else:
+                    time.sleep(2)              
+        elif message.content.lower() == "n":
+                await notify_user(self.new_user, f'You close the request')
+                await self.temp_chan.delete()
+        elif message.author != self.new_user :
+            if message.author.bot:
+                pass
+            else : 
+                await self.temp_chan.send(f'You did not make the request')
+           
+
+
+@commands.Cog.listener("on_message")
+    async def feedbacker(self, message):
+        #identifying channel 
+        guild = message.guild
+        question = ["question_a","question_b","question_c","question_d"]
+        list_answers = ["","","","","","","",""]
+        if message.author != self.new_user:
+            pass  
+        elif message.content == "yes" or "y":
+            while message.author == self.new_user:
+                if len(list_answers[0]) == 0:
+                    await self.temp_chan.send(question[0])
+                    answer0 = message.content
+                    list_answers.insert(0,answer0)
+                    print("Question one",list_answers)
+                elif len(list_answers[0]) >= 2:
+                    await self.temp_chan.send(question[1])
+                    answer1 = message.content
+                    list_answers.insert(1,answer1)
+                    print("Question two",list_answers)
+                elif len(list_answers[2]) >= 2:
+                    await self.temp_chan.send(question[2])
+                    answer2 = message.content
+                    list_answers.insert(2,answer2)
+                    print("Question tre",list_answers)
+                elif len(list_answers[3]) >= 2:
+                    await self.temp_chan.send(question[3])
+                    answer3 = message.content
+                    list_answers.insert(3,answer3)
+                else:
+                    time.sleep(2)              
+        elif message.content.lower() == "n":
+                await notify_user(self.new_user, f'You close the request')
+                await self.temp_chan.delete()
+        elif message.author != self.new_user :
+            if message.author.bot:
+                pass
+            else : 
+                await self.temp_chan.send(f'You did not make the request')        
+        
+        
+        # if message.author == self.new_user : 
+        #     if message.content.lower() == "y":
+        #         await self.temp_chan.send(question[0])
+        #         answer_0 = message.content 
+        #         list_answers[0].replace("",answer_0)
+        #         while len(list_answers[0]) == 0 :
+        #             if len(list_answers[0]) >= 2:
+        #                 await self.temp_chan.send(question[1])
+        #                 answer_1 = message.content 
+        #                 list_answers[0].replace("",answer_1)
+        #             else: 
+        #                 t=
+        #                 mins, secs = divmod(t, 60) 
+        #                 timer = '{:02d}:{:02d}'.format(mins, secs) 
+        #                 print(timer, end="\r") 
+        #                 time.sleep(10) 
+        #     if message.content.lower() == "n":
+        #         await notify_user(self.new_user, f'You close the request')
+        #         await self.temp_chan.delete()
+        # elif message.author != self.new_user :
+        #     if message.author.bot:
+        #         pass
+        #     else : 
+        #         await self.temp_chan.send(f'You did not make the request')
+            
+    
+
+#  @commands.Cog.listener("on_message")
+#     async def feedbacker(self, message):
+#         #identifying channel 
+    
+#         question = ["question_a","question_b","question_c","question_d"]
+#         # for channel in guild.channels:
+#         #     if channel.name == given_name:
+#         #         #get id = (not usefull yet)
+#         #         wanted_channel_id = channel.id
+#         #         temp_chan = channel       
+#         if message.author.bot:
+#             pass
+#         if message.content.lower() == "y":
+#             await self.temp_chan.send(question[0])
+#             if message.content =="":
+#                 await self.temp.chan.send(f'You must enter a sentence')
+#         if message.content.lower() == "n":
+#             await notify_user(self.new_user, f'You close the request')
+#             await self.temp_chan.delete()
+        # for channel in guild.channels:
+        #     if channel.name == given_name:
+        #         #get id = (not usefull yet)
+        #         wanted_channel_id = channel.id
+        #         temp_chan = channel 
